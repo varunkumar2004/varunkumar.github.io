@@ -3,9 +3,121 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Varun Kumar Portfolio</title>
+    <link rel="stylesheet" href="css/styles.css">
+
+    <!-- google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Libre+Barcode+39+Extended+Text&display=swap" rel="stylesheet">
 </head>
 <body>
-    <strong>Varun Kumar</strong>
+    <header class="navigation">
+        <strong class="logo barcode">vk</strong>
+
+        <div class="links">
+            <button class="inter">Work</button>
+            <button class="inter">About</button>
+            <button class="contact inter">Contact</button>
+        </div>
+    </header>
+
+    <section class="intro">
+        <div>
+            <h1>I'm Varun Kumar, an android developer & graphic designer based in India. Available for internships & Jobs.</h1>
+        </div>
+        
+
+        <h1>Android Developer</h1>
+    </section>
+
+    <div class="intro">
+        
+        <img src="hawk.jpg" alt="Hawk">
+    </div>
+    
+    <section id="projects">
+        <h2>Projects</h2>
+        <div class="project-grid">
+            <div class="project-card">
+                <img src="project1.jpg" alt="Project 01 Example">
+                <h3>01 Example</h3>
+            </div>
+            <div class="project-card">
+                <img src="project2.jpg" alt="Project 02 Example">
+                <h3>02 Example</h3>
+            </div>
+            <div class="project-card">
+                <img src="project3.jpg" alt="Project 03 Example">
+                <h3>03 Example</h3>
+            </div>
+        </div>
+    </section>
+
+    <section id="content-creation">
+        <h2>Content Creation</h2>
+        <p>Join my YouTube channel where I show my design thinking, my process, and my personality. The channel has helped over 200k designers become more proficient in the tools I use everyday, Figma, Webflow & more. Join the journey!</p>
+        <a href="mailto:hello@arnau.design">Get in contact about a sponsorship</a>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/your-video-id" frameborder="0" allowfullscreen></iframe>
+    </section>
+
+    <section class="about_section">
+        <div class="header">
+            <h2>About Me</h2>
+            <div class="underline"></div>
+        </div> 
+
+        <p>I'm an android developer on various projects on a wide range of clients. My skillsets lies in coding innovative android solutions and refined user end product. You can find my projects on GitHub. I'm passionate about giving back and learn something valuable on the way.</p>
+        <div class="services">
+            <div>
+                <h3>Branding / Logo</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer laoreet justo massa.</p>
+            </div>
+            <div>
+                <h3>Websites</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer laoreet justo massa.</p>
+            </div>
+            <div>
+                <h3>Packaging</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer laoreet justo massa.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="testimonials">
+        <h2>What Clients Say</h2>
+        <div class="testimonial">
+            <p>“I rehired Arnau to do some additional design work for my private label brand. Again, he was creative and efficient in bringing my ideas to fruition. Thanks Arnau”</p>
+            <p>— Ronak Weasley, CEO</p>
+        </div>
+    </section>
+
+    <section id="contact">
+        <h2>Say Hello</h2>
+        <form action="mailto:hello@arnau.design" method="post" enctype="text/plain">
+            <div>
+                <label for="firstName">Name</label>
+                <input type="text" id="firstName" name="firstName" required>
+                <input type="text" id="lastName" name="lastName" required>
+            </div>
+            <div>
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div>
+                <label for="message">Message</label>
+                <textarea id="message" name="message" required></textarea>
+            </div>
+            <button type="submit">Send</button>
+        </form>
+    </section>
+
+    <footer>
+        <strong class="logo barcode">vk</strong>
+
+        <div class="links">
+            
+        </div>
+    </footer>
 </body>
 </html>

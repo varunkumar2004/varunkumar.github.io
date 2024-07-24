@@ -1,0 +1,73 @@
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  position: relative;
+  font-family: "Inter", sans-serif;
+  font-weight: 500;
+}
+body .barcode {
+  font-family: "Libre Barcode 39 Extended Text", system-ui;
+  font-weight: 400;
+  font-style: normal;
+}
+
+h2 {
+  margin: 0;
+  padding: 0;
+}
+
+header, footer {
+  display: flex;
+  padding: 15px 50px;
+  width: calc(100vw - 100px);
+  align-items: center;
+  justify-content: space-between;
+  background: white;
+}
+header strong, footer strong {
+  font-size: 40px;
+}
+header .links button, footer .links button {
+  padding: 15px;
+  background-color: transparent;
+  border: none;
+  font-size: 16px;
+  color: #000;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+header {
+  position: fixed;
+}
+
+section {
+  height: calc(100vh - 100px);
+}
+
+section.intro {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  justify-content: center;
+}
+
+section.about_section {
+  position: relative;
+  padding: 50px;
+  background: red;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+section.about_section .header {
+  position: absolute;
+  font-size: 40px;
+}
+section.about_section .header .underline {
+  margin-top: 20px;
+  height: 5px;
+  background: black;
+  width: 100%;
+}/*# sourceMappingURL=styles.css.map */
