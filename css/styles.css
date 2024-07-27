@@ -3,71 +3,265 @@ body {
   padding: 0;
   box-sizing: border-box;
   position: relative;
-  font-family: "Inter", sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-weight: 500;
+  background-color: whitesmoke;
+  position: relative;
+  overflow-x: hidden;
 }
-body .barcode {
-  font-family: "Libre Barcode 39 Extended Text", system-ui;
-  font-weight: 400;
+body .logo {
+  font-family: "Playwrite BE WAL", cursive;
+  font-optical-sizing: auto;
+  font-weight: 600;
   font-style: normal;
 }
-
-h2 {
+body button {
+  background: transparent;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+body a {
+  text-decoration: none;
+  color: black;
+}
+body .underline {
+  text-decoration: underline;
+  cursor: pointer;
+}
+body strong, body h1, body h2, body p {
   margin: 0;
   padding: 0;
 }
 
-header, footer {
+/* Customize the scrollbar track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Customize the scrollbar thumb */
+::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+/* Customize the scrollbar thumb on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+/* Customize the scrollbar */
+::-webkit-scrollbar {
+  width: 10px; /* Scrollbar width */
+}
+
+aside.contact_section {
+  background-color: white;
+  border: 1px solid black;
+  position: fixed;
+  padding: 30px;
+  right: 10px;
+  bottom: 10px;
+  gap: 20px;
+  display: none;
+  z-index: 100;
+}
+aside.contact_section .header {
   display: flex;
-  padding: 15px 50px;
-  width: calc(100vw - 100px);
   align-items: center;
   justify-content: space-between;
-  background: white;
 }
-header strong, footer strong {
-  font-size: 40px;
+aside.contact_section .header strong {
+  font-size: 24px;
 }
-header .links button, footer .links button {
-  padding: 15px;
-  background-color: transparent;
-  border: none;
-  font-size: 16px;
-  color: #000;
-  border-radius: 4px;
+aside.contact_section .content {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  font-size: 18px;
+  font-weight: 500;
+}
+aside.contact_section .socials {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+aside.contact_section .socials img {
+  width: 35px;
+  height: 35px;
+}
+
+.contact_section.active {
+  display: grid;
+}
+
+header, footer {
+  display: grid;
+  align-items: center;
+  z-index: 1000;
+}
+header .separator, footer .separator {
+  width: 100%;
+  height: 2px;
+  background: black;
+}
+header .content, footer .content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 50px;
+}
+header .content .links, footer .content .links {
+  display: flex;
+  gap: 20px;
+}
+header .content .links button, footer .content .links button {
+  font-size: 18px;
+  color: black;
   cursor: pointer;
 }
 
 header {
   position: fixed;
+  width: 100vw;
+  background: white;
 }
 
 section {
-  height: calc(100vh - 100px);
+  height: 100vh;
+  display: grid;
+  padding: 50px;
+  grid-template-rows: 20% 80%;
+}
+section .header {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 16px;
+}
+section .header h2 {
+  font-size: 40px;
+  font-weight: 500;
+}
+section .header .underline {
+  width: 100%;
+  height: 1px;
+  background: black;
+}
+section .content {
+  position: relative;
+}
+section .content .center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 30px;
+  background: whitesmoke;
+  padding: 16px;
+  width: 50%;
 }
 
-section.intro {
+section.intro_section {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 60% 40%;
+  grid-template-rows: 100%;
+}
+section.intro_section .image {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+section.intro_section .image img {
+  width: 80%;
+  -webkit-filter: grayscale(1);
+}
+section.intro_section .content {
+  display: grid;
+  align-items: center;
+  justify-content: flex-start;
+}
+section.intro_section .content h1 {
+  color: black;
+  background-color: transparent;
+  font-size: 50px;
+  font-weight: 500;
+}
+
+section.skills_section {
+  display: grid;
+  height: auto;
+  padding: 50px;
+  background-color: white;
+  grid-template-rows: 1fr;
+}
+section.skills_section .header {
+  height: 100%;
+}
+section.skills_section .header .header_skills {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+section.skills_section .header .header_skills .skills_links {
+  display: inherit;
+  gap: 30px;
+}
+section.skills_section .header .header_skills .skills_links img {
+  width: 80px;
+  height: 80px;
+  -webkit-filter: grayscale(1);
+}
+
+section.projects_section .content {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 16px;
+}
+section.projects_section .content .project_card {
+  display: grid;
+  grid-template-rows: 10% 90%;
+}
+section.projects_section .content .project_card .header h3 {
+  font-size: 20px;
+}
+section.projects_section .content .project_card .content {
+  transition: all 200ms ease-in-out;
+  background: white;
+  cursor: pointer;
+  display: flex;
   align-items: center;
   justify-content: center;
+  overflow: hidden;
+}
+section.projects_section .content .project_card .content img {
+  display: none;
+  height: 50%;
+}
+section.projects_section .content .project_card .content:hover {
+  box-shadow: 1px 1px 100px 2px rgba(0, 0, 0, 0.05);
 }
 
 section.about_section {
   position: relative;
-  padding: 50px;
-  background: red;
-  display: flex;
-  align-items: center;
-  justify-content: center;
 }
-section.about_section .header {
+section.about_section .circular_text {
+  bottom: 50px;
+  right: 50px;
   position: absolute;
-  font-size: 40px;
 }
-section.about_section .header .underline {
-  margin-top: 20px;
-  height: 5px;
-  background: black;
+section.about_section .circular_text img {
+  animation: rotate 10s linear infinite;
+  height: 100%;
   width: 100%;
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }/*# sourceMappingURL=styles.css.map */
