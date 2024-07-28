@@ -1,10 +1,9 @@
 // custom variables
 $primary-color: #f5f5f5;
-$hero-font-size: clamp(2.5rem, 1vw + 0.5rem, 3.5rem);
+$hero-font-size: clamp(2rem, 1vw + 0.5rem, 3.5rem);
 $header-font-size: clamp(1.2rem, 2vw + 0.1rem, 2.2rem);
-$body-font-size: clamp(1rem, 2vw + 0.1rem, 1.8rem);
+$body-font-size: clamp(1.125rem, 2vw + 0.1rem, 1.8rem);
 $custom-box-shadow: 1px 1px 100px 2px rgba(0, 0, 0, 0.05);
-$grid-wrap: repeat(auto-fit, minmax(20rem, 1fr));
 
 body {
     margin: 0;
@@ -16,7 +15,7 @@ body {
     position: relative;
 
     .logo {
-        font-family: "Playwrite BE WAL", cursive;
+        max-width: 5rem;
     }
 
     button {
@@ -43,6 +42,7 @@ body {
 
     h1 {
         font-size: $hero-font-size;
+        font-weight: 500;
     }
 
     h2 {
@@ -64,6 +64,10 @@ body {
             margin-left: 1rem;
             font-weight: 500;
         }
+    }
+
+    .icon {
+        width: 2rem;
     }
 }
 
@@ -114,11 +118,7 @@ aside.contact_section {
     .socials {
         display: flex;
         align-items: center;
-        gap: 1rem;
-
-        img {
-            width: 2rem;
-        } 
+        gap: 1rem; 
     }
 }
 .contact_section.active {
@@ -158,8 +158,9 @@ header, footer {
 }
 
 header {
-    position: sticky;
-    // width: 100vw;
+    position: fixed;
+    width: 100vw;
+    top: 0;
     background: white;
 }
 
@@ -188,11 +189,12 @@ section {
 
 section.intro_section {
     display: grid;
-    min-height: 70vh;
     grid-template-columns: repeat(auto-fit, minmax(26rem, 1fr));
 
     .content {
-        text-align: center;
+        align-items: center;
+        justify-content: center;
+        text-align: end;
     }
 
     .image {
@@ -201,7 +203,8 @@ section.intro_section {
         justify-content: center;
 
         img {       
-            max-height: 50vw;
+            width: 100%;
+            max-width: 22rem;
             -webkit-filter: grayscale(1);
             filter: grayscale(1);
         }
@@ -243,7 +246,7 @@ section.skills_section {
 section.projects_section {
     .content {
         grid-template-columns: 
-            repeat(auto-fit, minmax(22rem, 1fr));
+            repeat(auto-fit, minmax(18rem, 1fr));
         gap: 1rem;
 
         .project_card {
@@ -252,15 +255,46 @@ section.projects_section {
             gap: 1rem;
             
             .content {
+                position: relative;
                 transition: all 200ms ease-in-out;
                 background: white;
                 cursor: pointer;
                 max-width: 100%;
                 aspect-ratio: 1/1;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                overflow: hidden;
+                padding: 1rem;
+
+                img {
+                    height: 100%;
+                    object-fit: contain;
+                }
+
+                .overlay {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    background: rgba(44, 44, 44, 0.5);
+                    backdrop-filter: blur(5px);
+                    display: none;
+                    place-items: center;
+
+                    img {
+                        filter: invert(1);
+                    }
+                }
             }
 
             .content:hover {
                 box-shadow: $custom-box-shadow;
+
+                .overlay {
+                    display: grid;
+                }
             }
         }        
     }
@@ -271,6 +305,10 @@ section.about_section {
         display: grid;
         align-items: center;
         justify-content: center;
+
+        h3 {
+            max-width: 95rem;
+        }
     }
     
     .circular_text {
@@ -295,6 +333,18 @@ section.about_section {
 }
 
 // responsive 
+@media screen and (max-width: 30rem) {
+    .intro_section {
+        .content {
+            background: red;
+        }
+
+        .image {
+            display: none;
+        }
+    }
+}
+
 @media screen and (max-width: 38rem) {
     header, footer {
         .content {
@@ -303,3 +353,13 @@ section.about_section {
         }
     }
 }
+
+// @media screen and (max-width: 110rem) {
+//     .about_section {
+//         .content {
+//             h3 {
+//                 max-width: ;
+//             }
+//         }
+//     }
+// }

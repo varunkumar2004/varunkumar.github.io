@@ -3,7 +3,10 @@ let contact_span = document.querySelectorAll('.contact_span')
 let contact_section = document.querySelector('.contact_section')
 let close_contact = document.querySelector('.close_contact')
 
-console.log(contact_section)
+// height buffer for scrolling
+let nav_height = document.querySelector('.navigation').scrollHeight
+let intro_section = document.querySelector('.intro_section')
+intro_section.style.marginTop = nav_height + 'px'
 
 close_contact.addEventListener('click', () => {
     if (contact_section.classList.contains('active')) {

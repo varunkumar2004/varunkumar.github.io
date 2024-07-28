@@ -8,7 +8,7 @@ body {
   position: relative;
 }
 body .logo {
-  font-family: "Playwrite BE WAL", cursive;
+  max-width: 5rem;
 }
 body button {
   background: transparent;
@@ -29,14 +29,15 @@ body strong, body h1, body h2, body h3, body p, body a {
   padding: 0;
 }
 body h1 {
-  font-size: clamp(2.5rem, 1vw + 0.5rem, 3.5rem);
+  font-size: clamp(2rem, 1vw + 0.5rem, 3.5rem);
+  font-weight: 500;
 }
 body h2 {
   font-size: clamp(1.2rem, 2vw + 0.1rem, 2.2rem);
   font-weight: 500;
 }
 body h3 {
-  font-size: clamp(1rem, 2vw + 0.1rem, 1.8rem);
+  font-size: clamp(1.125rem, 2vw + 0.1rem, 1.8rem);
   font-weight: 400;
   text-align: justify;
 }
@@ -47,6 +48,9 @@ body .spanned {
 body .spanned span {
   margin-left: 1rem;
   font-weight: 500;
+}
+body .icon {
+  width: 2rem;
 }
 
 /* Customize the scrollbar track */
@@ -96,9 +100,6 @@ aside.contact_section .socials {
   align-items: center;
   gap: 1rem;
 }
-aside.contact_section .socials img {
-  width: 2rem;
-}
 
 .contact_section.active {
   display: grid;
@@ -133,7 +134,9 @@ header .content .links button, footer .content .links button {
 }
 
 header {
-  position: sticky;
+  position: fixed;
+  width: 100vw;
+  top: 0;
   background: white;
 }
 
@@ -159,11 +162,12 @@ section .content {
 
 section.intro_section {
   display: grid;
-  min-height: 70vh;
   grid-template-columns: repeat(auto-fit, minmax(26rem, 1fr));
 }
 section.intro_section .content {
-  text-align: center;
+  align-items: center;
+  justify-content: center;
+  text-align: end;
 }
 section.intro_section .image {
   display: flex;
@@ -171,7 +175,8 @@ section.intro_section .image {
   justify-content: center;
 }
 section.intro_section .image img {
-  max-height: 50vw;
+  width: 100%;
+  max-width: 22rem;
   filter: grayscale(1);
 }
 section.intro_section .content {
@@ -202,7 +207,7 @@ section.skills_section .skills_links div img {
 }
 
 section.projects_section .content {
-  grid-template-columns: repeat(auto-fit, minmax(22rem, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr));
   gap: 1rem;
 }
 section.projects_section .content .project_card {
@@ -211,20 +216,52 @@ section.projects_section .content .project_card {
   gap: 1rem;
 }
 section.projects_section .content .project_card .content {
+  position: relative;
   transition: all 200ms ease-in-out;
   background: white;
   cursor: pointer;
   max-width: 100%;
   aspect-ratio: 1/1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  padding: 1rem;
+}
+section.projects_section .content .project_card .content img {
+  height: 100%;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+section.projects_section .content .project_card .content .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(44, 44, 44, 0.5);
+  -webkit-backdrop-filter: blur(5px);
+          backdrop-filter: blur(5px);
+  display: none;
+  place-items: center;
+}
+section.projects_section .content .project_card .content .overlay img {
+  filter: invert(1);
 }
 section.projects_section .content .project_card .content:hover {
   box-shadow: 1px 1px 100px 2px rgba(0, 0, 0, 0.05);
+}
+section.projects_section .content .project_card .content:hover .overlay {
+  display: grid;
 }
 
 section.about_section .content {
   display: grid;
   align-items: center;
   justify-content: center;
+}
+section.about_section .content h3 {
+  max-width: 95rem;
 }
 section.about_section .circular_text {
   display: flex;
@@ -242,6 +279,14 @@ section.about_section .circular_text img {
   }
   100% {
     transform: rotate(360deg);
+  }
+}
+@media screen and (max-width: 30rem) {
+  .intro_section .content {
+    background: red;
+  }
+  .intro_section .image {
+    display: none;
   }
 }
 @media screen and (max-width: 38rem) {

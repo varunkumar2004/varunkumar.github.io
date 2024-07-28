@@ -5,11 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio - Varun Kumar</title>
     <link rel="stylesheet" href="css/styles.css">
-    <link rel="icon" type="image/x-icon" href="./images/fav_icon.png">
+    <link rel="icon" type="image/x-icon" href="./images/icon.png">
+
     <!-- google fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Libre+logo+39+Extended+Text&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Playwrite+BE+WAL:wght@100..400&display=swap" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lumanosimo&display=swap" rel="stylesheet">
 </head>
 <body>
     <aside class="contact_section">
@@ -17,7 +22,7 @@
             <h2>Contact</h2>
 
             <button class="close_contact">
-                <img src="./images/icons/close.svg" alt="">
+                <img class="icon" src="./images/icons/close.svg" alt="">
             </button>
         </div>
 
@@ -28,15 +33,18 @@
         </div>
         
         <div class="socials">
-            <a href="https://github.com/varunkumar2004"><img src="./images/icons/github.svg" alt=""></a>
-            <a href="https://www.linkedin.com/in/varun-kumar-903308249/"><img src="./images/icons/linkedin.svg" alt=""></a>
-            <a href="https://x.com/varun__2004"><img src="./images/icons/twitter.svg" alt=""></a>
+            <a href="https://github.com/varunkumar2004"><img class="icon" src="./images/icons/github.svg" alt=""></a>
+            <a href="https://www.linkedin.com/in/varun-kumar-903308249/"><img class="icon" src="./images/icons/linkedin.svg" alt=""></a>
+            <a href="https://x.com/varun__2004"><img class="icon" src="./images/icons/twitter.svg" alt=""></a>
         </div>
     </aside>
 
     <header class="navigation">
         <div class="content header">
-            <strong class="logo">Varun Kumar</strong>
+            <!-- <strong class="logo">Varun Kumar</strong> -->
+            <a href="">
+                <img class="logo" src="./images/logo.png" alt="">
+            </a>
 
             <div class="links">
                 <button id="nav_links" --nav_link="projects_section">Projects</button>
@@ -51,7 +59,7 @@
 
     <section class="intro_section">
         <div class="content">
-            <h1>I'm Varun Kumar, an android developer & graphic designer based in India. <span class="underline contact_span">Available</span> for Internships & Jobs.</h1>
+            <h1>I'm Varun Kumar, an android developer & graphic designer based in India. <br><span class="underline contact_span">Available</span> for Internships & Jobs.</h1>
         </div>
 
         <div class="image">
@@ -63,7 +71,7 @@
         <div class="header">
             <h2>Skills</h2>
 
-            <div class="content spanned">
+            <!-- <div class="content spanned">
                 <p>Android <span>Experienced in building and deploying Android applications.</span></p>
                 <p>Kotlin <span>Proficient in Kotlin, with a strong understanding of modern Android development practices.</span></p>
                 <p>C++ <span>Solid foundation in C++ for problem solving and performance-critical solutions.</span></p>
@@ -71,7 +79,7 @@
                 <p>HTML & CSS <span>Proficient in creating and styling responsive web pages.</span></p>
                 <p>Python <span>Knowledgeable in Python for scripting, automation, and data analysis.</span></p>
                 <p>Figma <span>Familiar with Figma for UI/UX design and prototyping.</span></p>
-            </div>
+            </div> -->
         </div>
 
         <div class="skills_links">
@@ -109,7 +117,7 @@
         <div class="header">
             <div style="display: flex; align-items: center; gap: 0.5rem;">
                 <h2>Projects</h2>
-                <img src="./images/icons/link.svg" alt="">
+                <!-- <img src="./images/icons/link.svg" alt=""> -->
             </div>
 
             <div class="underline"></div>
@@ -120,7 +128,13 @@
                 <h3>SafeSpace</h3>
 
                 <div class="content">
-                    <!-- <img src="./images/safespace.png" alt=""> -->
+                    <div class="overlay">
+                        <a href="https://github.com/varunkumar2004/safespace">
+                            <img class="icon" src="./images/icons/forward.svg" alt="">
+                        </a>
+                    </div>
+
+                    <img src="./images/safespace.png" alt="">
                 </div>
             </div>
 
@@ -128,6 +142,9 @@
                 <h3>Echo Social App</h3>
 
                 <div class="content">
+                    <div class="overlay">
+                        <a href="https://github.com/varunkumar2004/Echo-Social-App"><img class="icon" src="./images/icons/forward.svg" alt=""></a>
+                    </div>
                 </div>
             </div>
 
@@ -135,6 +152,19 @@
                 <h3>OpenCV Projects</h3>
 
                 <div class="content">
+                    <div class="overlay">
+                        <a href="https://github.com/varunkumar2004/opencv"><img class="icon" src="./images/icons/forward.svg" alt=""></a>
+                    </div>    
+                </div>
+            </div>
+
+            <div class="project_card">
+                <h3>Music App</h3>
+
+                <div class="content">
+                    <div class="overlay">
+                        <a href="https://github.com/varunkumar2004/Music-App"><img class="icon" src="./images/icons/forward.svg" alt=""></a>
+                    </div>    
                 </div>
             </div>
         </div>
@@ -159,7 +189,9 @@
         <div class="separator"></div>
 
         <div class="content footer">
-            <strong class="logo">Varun Kumar</strong>
+            <a href="">
+                <img class="logo" src="./images/logo.png" alt="">
+            </a>
             
             <div class="links">
                 <p>India</p>
