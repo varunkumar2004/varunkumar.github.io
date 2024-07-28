@@ -14,16 +14,17 @@
 <body>
     <aside class="contact_section">
         <div class="header">
-            <strong>Contact</strong>
-            <button class="contact_span">
+            <h2>Contact</h2>
+
+            <button class="close_contact">
                 <img src="./images/icons/close.svg" alt="">
             </button>
         </div>
 
-        <div class="content">
-            <p>Personal: varunkumar2004.vk@gmail.com</p>
-            <p>Education: vkumar3_be22@thapar.edu</p>
-            <p>Phone: +91 7626821592</p>
+        <div class="content spanned">
+            <p>Personal <span>varunkumar2004.vk@gmail.com</span></p>
+            <p>Education <span>vkumar3_be22@thapar.edu</span></p>
+            <p>Phone <span>+91 7626821592</span></p>
         </div>
         
         <div class="socials">
@@ -44,6 +45,8 @@
                 <button id="nav_links" class="contact_span"><p class="underline">Contact</p></button>
             </div>
         </div>
+
+        <div class="separator"></div>
     </header>
 
     <section class="intro_section">
@@ -58,52 +61,78 @@
 
     <section class="skills_section">
         <div class="header">
-            <div class="header_skills">
-                <h2>Skills</h2>
+            <h2>Skills</h2>
 
-                <div class="skills_links">
-                    <img src="./images/icons/android.svg" alt="">
-                    <img src="./images/icons/cpp.svg" alt="">
-                    <img src="./images/icons/javascript.svg" alt="">
-                    <img src="./images/icons/html.svg" alt="">
-                    <img src="./images/icons/python.svg" alt="">
-                    <img src="./images/icons/figma.svg" alt="">
-                    <img src="./images/icons/kotlin.svg" alt="">
-                </div>
+            <!-- <div class="content spanned">
+                <p>Android <span>Experienced in building and deploying Android applications.</span></p>
+                <p>Kotlin <span>Proficient in Kotlin, with a strong understanding of modern Android development practices.</span></p>
+                <p>C++ <span>Solid foundation in C++ for problem solving and performance-critical solutions.</span></p>
+                <p>JavaScript <span>Skilled in Vanilla JavaScript for frontend development and interactive web applications.</span></p>
+                <p>HTML & CSS <span>Proficient in creating and styling responsive web pages.</span></p>
+                <p>Python <span>Knowledgeable in Python for scripting, automation, and data analysis.</span></p>
+                <p>Figma <span>Familiar with Figma for UI/UX design and prototyping.</span></p>
+            </div> -->
+        </div>
+
+        <div class="skills_links">
+            <div>
+                <img src="./images/icons/android.svg" alt="">
             </div>
-        </div> 
+
+            <div>
+                <img src="./images/icons/cpp.svg" alt="">
+            </div>
+
+            <div>
+                <img src="./images/icons/javascript.svg" alt="">
+            </div>
+
+            <div>
+                <img src="./images/icons/html.svg" alt="">
+            </div>
+
+            <div>
+                <img src="./images/icons/python.svg" alt="">
+            </div>
+
+            <div>
+                <img src="./images/icons/figma.svg" alt="">
+            </div>
+
+            <div>
+                <img src="./images/icons/kotlin.svg" alt="">
+            </div>
+        </div>
     </section>
     
     <section class="projects_section">
         <div class="header">
-            <a href="https://github.com/varunkumar2004"><h2>Projects <img src="./images/icons/link.svg" alt=""></a></h2>
+            <div style="display: flex; align-items: center; gap: 0.5rem;">
+                <h2>Projects</h2>
+                <img src="./images/icons/link.svg" alt="">
+            </div>
+
             <div class="underline"></div>
         </div> 
 
         <div class="content">
             <div class="project_card">
-                <div class="header">
-                    <h3>SafeSpace</h3>
-                </div>
+                <h3>SafeSpace</h3>
 
                 <div class="content">
-                    <img src="./images/safespace.png" alt="">
+                    <!-- <img src="./images/safespace.png" alt=""> -->
                 </div>
             </div>
 
             <div class="project_card">
-                <div class="header">
-                    <h3>Echo Social App</h3>
-                </div>
+                <h3>Echo Social App</h3>
 
                 <div class="content">
                 </div>
             </div>
 
             <div class="project_card">
-                <div class="header">
-                    <h3>OpenCV Projects</h3>
-                </div>
+                <h3>OpenCV Projects</h3>
 
                 <div class="content">
                 </div>
@@ -122,7 +151,7 @@
         </div>
 
         <div class="content">
-            <p class="center">I'm an android developer with over 1.5 years of experience working on various projects on the way. My skillsets lies in coding innovative android solutions and refined user end product. I excel in designing intuitive interfaces and optimizing app performance. With a strong background in problem-solving and a keen eye for detail, Currently studying at Thapar Institute of Engineering and Technology, I'm passionate about leveraging technology to solve real-world problems and is continually expanding my skills. You can find my projects on <a href="https://github.com/varunkumar2004?tab=repositories"><span class="underline">GitHub.</span></a></p>
+            <h3>I'm an android developer with over 1.5 years of experience working on various projects on the way. My skillsets lies in coding innovative android solutions and refined user end product. I excel in designing intuitive interfaces and optimizing app performance. With a strong background in problem-solving and a keen eye for detail, Currently studying at <span class="underline contact_span">Thapar Institute of Engineering and Technology</span>, I'm passionate about leveraging technology to solve real-world problems and is continually expanding my skills. You can find my projects on <a href="https://github.com/varunkumar2004?tab=repositories"><span class="underline">GitHub.</span></a></h3>
         </div> 
     </section>
     
@@ -133,8 +162,8 @@
             <strong class="logo">Varun Kumar</strong>
             
             <div class="links">
-                <p class="underline">India</p>
-                <button id="nav_links" --nav_link="intro_section">Back to top</button>
+                <p>India</p>
+                <button id="nav_links" --nav_link="intro_section" class="underline">Back to top</button>
             </div>
         </div>
     </footer>
