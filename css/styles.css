@@ -29,14 +29,19 @@ body strong, body h1, body h2, body h3, body p, body a {
   padding: 0;
 }
 body h1 {
-  font-size: clamp(2rem, 1vw + 0.5rem, 3.5rem);
+  font-size: clamp(2rem, 2vw + 0.5rem, 4rem);
   font-weight: 500;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+       user-select: none;
+  max-width: 80rem;
 }
 body h2 {
   font-size: clamp(1.2rem, 2vw + 0.1rem, 2.2rem);
   font-weight: 500;
 }
 body h3 {
+  max-width: 80rem;
   font-size: clamp(1.125rem, 2vw + 0.1rem, 1.8rem);
   font-weight: 400;
   text-align: justify;
@@ -109,35 +114,38 @@ header, footer {
   display: grid;
   align-items: center;
   z-index: 1000;
-  background: whitesmoke;
+  background: rgba(234, 234, 234, 0.7);
+  -webkit-backdrop-filter: blur(40px);
+          backdrop-filter: blur(40px);
 }
 header .separator, footer .separator {
   width: 100%;
   height: 1px;
-  background: rgb(191, 191, 191);
+  background: rgb(27, 27, 27);
 }
 header .content, footer .content {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 1.25rem 3.125rem;
+  padding: 1.25rem 3rem;
+  gap: 3rem;
 }
 header .content .links, footer .content .links {
   display: flex;
   align-items: center;
+  justify-content: flex-end;
+  flex-wrap: wrap;
   gap: 1rem;
 }
 header .content .links button, footer .content .links button {
-  font-size: 18px;
-  color: black;
+  font-size: 1rem;
   cursor: pointer;
 }
 
 header {
   position: fixed;
-  width: 100vw;
+  min-width: 100vw;
   top: 0;
-  background: white;
 }
 
 section {
@@ -154,7 +162,7 @@ section .header {
 section .header .underline {
   width: 100%;
   height: 1px;
-  background: black;
+  background: rgb(27, 27, 27);
 }
 section .content {
   display: grid;
@@ -162,12 +170,12 @@ section .content {
 
 section.intro_section {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(26rem, 1fr));
+  place-items: center;
+  position: relative;
 }
 section.intro_section .content {
   align-items: center;
   justify-content: center;
-  text-align: end;
 }
 section.intro_section .image {
   display: flex;
@@ -179,8 +187,15 @@ section.intro_section .image img {
   max-width: 22rem;
   filter: grayscale(1);
 }
-section.intro_section .content {
-  align-items: center;
+section.intro_section .icon {
+  position: absolute;
+  right: 1rem;
+  bottom: 1rem;
+  background: rgba(255, 255, 255, 0.7);
+  -webkit-backdrop-filter: blur(40px);
+          backdrop-filter: blur(40px);
+  border-radius: 100%;
+  padding: 1rem;
 }
 
 section.skills_section {
@@ -191,17 +206,17 @@ section.skills_section .header {
 }
 section.skills_section .skills_links {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
-  justify-content: space-around;
+  grid-template-columns: repeat(auto-fit, minmax(8rem, 1fr));
   align-items: center;
-  gap: 2rem;
+  gap: 1rem;
 }
-section.skills_section .skills_links div {
+section.skills_section .skills_links div.skill {
   display: inherit;
-  justify-content: center;
+  place-items: center;
+  gap: inherit;
 }
-section.skills_section .skills_links div img {
-  width: 6rem;
+section.skills_section .skills_links div.skill img {
+  width: 5rem;
   aspect-ratio: 1/1;
   filter: grayscale(1);
 }
@@ -242,8 +257,10 @@ section.projects_section .content .project_card .content .overlay {
   background: rgba(44, 44, 44, 0.5);
   -webkit-backdrop-filter: blur(5px);
           backdrop-filter: blur(5px);
-  display: none;
+  display: grid;
+  filter: opacity(0);
   place-items: center;
+  transition: all 200ms ease-in-out;
 }
 section.projects_section .content .project_card .content .overlay img {
   filter: invert(1);
@@ -252,16 +269,13 @@ section.projects_section .content .project_card .content:hover {
   box-shadow: 1px 1px 100px 2px rgba(0, 0, 0, 0.05);
 }
 section.projects_section .content .project_card .content:hover .overlay {
-  display: grid;
+  filter: opacity(1);
 }
 
 section.about_section .content {
   display: grid;
   align-items: center;
   justify-content: center;
-}
-section.about_section .content h3 {
-  max-width: 95rem;
 }
 section.about_section .circular_text {
   display: flex;
@@ -281,17 +295,26 @@ section.about_section .circular_text img {
     transform: rotate(360deg);
   }
 }
-@media screen and (max-width: 30rem) {
-  .intro_section .content {
-    background: red;
+@media screen and (max-width: 25rem) {
+  header .content, footer .content {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
   }
-  .intro_section .image {
-    display: none;
+  section {
+    padding: 1.5rem;
   }
 }
-@media screen and (max-width: 38rem) {
+@media screen and (max-width: 30rem) {
   header .content, footer .content {
-    gap: 1rem;
-    flex-direction: column;
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+  section {
+    padding: 2rem;
+  }
+}
+@media screen and (max-width: 60rem) {
+  section.intro_section .content h1 {
+    text-align: center;
   }
 }/*# sourceMappingURL=styles.css.map */
