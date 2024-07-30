@@ -139,7 +139,6 @@ header .content .links, footer .content .links {
   justify-content: center;
   flex-wrap: wrap;
   gap: 1rem;
-  outline: 1px solid red;
 }
 header .content .links button, footer .content .links button {
   font-size: 1rem;
@@ -191,7 +190,6 @@ section.intro_section .image {
 section.intro_section .image img {
   width: 100%;
   max-width: 22rem;
-  filter: grayscale(1);
 }
 section.intro_section .scroll_icon {
   position: absolute;

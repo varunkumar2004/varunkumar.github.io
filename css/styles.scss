@@ -171,7 +171,6 @@ header, footer {
             justify-content: center;
             flex-wrap: wrap;
             gap: 1rem;
-            outline: 1px solid red;
 
             button {
                 font-size: 1rem;
@@ -230,8 +229,8 @@ section.intro_section {
         img {       
             width: 100%;
             max-width: 22rem;
-            -webkit-filter: grayscale(1);
-            filter: grayscale(1);
+            // -webkit-filter: grayscale(1);
+            // filter: grayscale(1);
         }
     }
 
