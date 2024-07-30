@@ -90,7 +90,7 @@ aside.contact_section {
   bottom: 0rem;
   gap: 1rem;
   display: none;
-  z-index: 100;
+  z-index: 1000000;
 }
 aside.contact_section .header {
   display: flex;
@@ -136,13 +136,15 @@ header .content, footer .content {
 header .content .links, footer .content .links {
   display: flex;
   align-items: center;
-  justify-content: flex-end;
+  justify-content: center;
   flex-wrap: wrap;
   gap: 1rem;
+  outline: 1px solid red;
 }
 header .content .links button, footer .content .links button {
   font-size: 1rem;
   cursor: pointer;
+  color: black;
 }
 
 header {
