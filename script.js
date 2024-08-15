@@ -22,6 +22,7 @@ header_links.forEach(
                 let target_element = document.getElementsByClassName(target)[0]
                 try {
                     target_element.scrollIntoView({ behavior: 'smooth' })
+                    console.log(target_element.scrollIntoView({ behavior: 'smooth' }))
                 } catch(e) {
                     console.log(e)
                 }

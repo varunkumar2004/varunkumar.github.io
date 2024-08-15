@@ -10,7 +10,7 @@ $header-dark: rgba(74, 74, 74, 0.7);
 $underline-dark: rgb(191, 191, 191);
 
 $hero-font-size: clamp(2rem, 2vw + 0.5rem, 4rem);
-$header-font-size: clamp(1.2rem, 2vw + 0.1rem, 2.2rem);
+$header-font-size: clamp(1.2rem, 5vw + 0.1rem, 2.2rem);
 $body-font-size: clamp(1.125rem, 2vw + 0.1rem, 1.8rem);
 $custom-box-shadow: 1px 1px 100px 2px rgba(0, 0, 0, 0.05);
 $horizontal-padding: 3rem;
@@ -23,9 +23,11 @@ body {
     font-family: "Montserrat", sans-serif;
     background-color: $primary-light;
     position: relative;
+    overflow-x: hidden;
 
-    display: grid;
-    align-items: center;
+    display: flex;
+    flex-direction: column;
+    place-items: center;
 
     .logo {
         max-width: 5rem;
@@ -54,11 +56,13 @@ body {
     }
 
     h1 {
+        text-transform: uppercase;
         font-size: $hero-font-size;
-        font-weight: 500;
+        font-weight: 600;
         -webkit-user-select: none;
         -ms-user-select: none;
         user-select: none;
+        // text-align: justify;
         max-width: 80rem;
     }
 
@@ -68,10 +72,9 @@ body {
     }
 
     h3 {
-        max-width: 80rem;
+        text-align: justify;
         font-size: $body-font-size;
         font-weight: 400;
-        text-align: justify;
     }
 
     .spanned {
@@ -89,24 +92,20 @@ body {
     }
 }
 
-/* Customize the scrollbar track */
 ::-webkit-scrollbar-track {
     background: $primary-light;
 }
 
-/* Customize the scrollbar thumb */
 ::-webkit-scrollbar-thumb {
     background: #888;
 }
 
-/* Customize the scrollbar thumb on hover */
 ::-webkit-scrollbar-thumb:hover {
     background: #555;
 }
 
-/* Customize the scrollbar */
 ::-webkit-scrollbar {
-    width: 10px; /* Scrollbar width */
+    width: 10px;
 }
 
 aside.contact_section {
@@ -119,7 +118,7 @@ aside.contact_section {
     bottom: 0rem;
     gap: 1rem;
     display: none;
-    z-index: 1000000;
+    z-index: 1001;
 
     .header {
         display: flex;
@@ -146,7 +145,8 @@ aside.contact_section {
 header, footer {
     display: grid;
     align-items: center;
-    // justify-content: center;
+    width: 100vw;
+    justify-content: center;
     z-index: 1000;
     background: $header-light;
     backdrop-filter: blur(40px);
@@ -161,7 +161,6 @@ header, footer {
         display: flex;
         align-items: center;
         justify-content: space-between;
-        max-width: 120rem;
         padding: 1.25rem $horizontal-padding;
         gap: 3rem;
 
@@ -187,11 +186,21 @@ header {
     top: 0;
 }
 
+.sections_container {
+    display: grid;
+    max-width: 100vw;
+    display: flex;
+    flex-direction: column;
+    place-items: center;
+    padding: $horizontal-padding;
+    gap: 5rem;
+}
+
 section {
     display: grid;
-    padding: $horizontal-padding;
-    max-width: 120rem;
     gap: 2rem;
+    width: 100%;
+    max-width: 90rem;
 
     .header {
         display: flex;
@@ -215,10 +224,12 @@ section.intro_section {
     display: grid;
     place-items: center;
     position: relative;
+    gap: 2rem;
 
     .content {
         align-items: center;
         justify-content: center;
+        text-align: center;
     }
 
     .image {
@@ -229,18 +240,15 @@ section.intro_section {
         img {       
             width: 100%;
             max-width: 22rem;
-            // -webkit-filter: grayscale(1);
-            // filter: grayscale(1);
+            -webkit-filter: grayscale(1);
+            filter: grayscale(1);
         }
     }
 
     .scroll_icon {
         position: absolute;
-        right: 1rem;
-        bottom: 1rem;
-        background: rgba(255, 255, 255);
-        border-radius: 100%;
-        padding: 1rem;
+        right: 0;
+        bottom: 0;
         display: flex;
         place-items: center;
         flex-direction: column;
@@ -253,17 +261,12 @@ section.intro_section {
 }
 
 section.skills_section {
-    background: white;
-
-    .header {
-        align-items: center;
-    }
-
     .skills_links {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(8rem, 1fr));
         align-items: center;
         gap: 1rem;
+        row-gap: 1.5rem;
 
         div.skill {
             display: inherit;
@@ -283,13 +286,18 @@ section.skills_section {
 section.projects_section {
     .content {
         grid-template-columns: 
-            repeat(auto-fit, minmax(18rem, 1fr));
+            repeat(auto-fit, minmax(15rem, 1fr));
         gap: 1rem;
 
         .project_card {
             display: flex;
             flex-direction: column;
             gap: 1rem;
+
+            h3 {
+                width: 100%;
+                text-align: center;
+            }
             
             .content {
                 position: relative;
@@ -307,6 +315,14 @@ section.projects_section {
                 img {
                     height: 100%;
                     object-fit: contain;
+                    border-radius: 1rem;
+                    border: 1px solid grey;
+                }
+
+                img.icon {
+                    padding: 1rem;
+                    width: 5rem;
+                    height: 5rem;
                 }
 
                 .overlay {
@@ -341,9 +357,9 @@ section.projects_section {
 
 section.about_section {
     .content {
-        display: grid;
-        align-items: center;
-        justify-content: center;
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
     }
     
     .circular_text {
@@ -381,27 +397,13 @@ section.about_section {
 
 // responsive 
 @media screen and (max-width: 25rem) {
-    header, footer {
-        .content {
-            padding-left: 1.5rem;
-            padding-right: 1.5rem;
-        }
-    }
-    
-    section {
-        padding: 1.5rem;
+    .sections_container {
+        padding: 1rem;
     }
 }
 
 @media screen and (max-width: 30rem) {
-    header, footer {
-        .content {
-            padding-left: 2rem;
-            padding-right: 2rem;
-        }
-    }
-    
-    section {
+    .sections_container {
         padding: 2rem;
     }
 }
@@ -415,12 +417,8 @@ section.about_section {
     }
 }
 
-@media screen and (max-width: 60rem) {
-    section.intro_section {
-        .content {
-            h1 {
-                text-align: center;
-            }
-        }
+@media screen and (max-width: 37rem) {
+    h1 {
+        text-align: center;
     }
 }
