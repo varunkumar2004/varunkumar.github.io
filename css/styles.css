@@ -4,7 +4,7 @@ body {
   box-sizing: border-box;
   position: relative;
   font-family: "Montserrat", sans-serif;
-  background-color: #f5f5f5;
+  background: radial-gradient(circle, rgb(235, 235, 255) 0%, rgb(255, 255, 255) 100%);
   position: relative;
   overflow-x: hidden;
   display: flex;
@@ -33,9 +33,8 @@ body strong, body h1, body h2, body h3, body p, body a {
   padding: 0;
 }
 body h1 {
-  text-transform: uppercase;
-  font-size: clamp(2rem, 2vw + 0.5rem, 4rem);
-  font-weight: 600;
+  font-size: clamp(1.5rem, 2vw + 1rem, 4rem);
+  font-weight: 800;
   -webkit-user-select: none;
   -moz-user-select: none;
        user-select: none;
@@ -116,14 +115,9 @@ header, footer {
   width: 100vw;
   justify-content: center;
   z-index: 1000;
-  background: rgba(234, 234, 234, 0.7);
+  background: rgba(239, 239, 250, 0.7);
   -webkit-backdrop-filter: blur(40px);
           backdrop-filter: blur(40px);
-}
-header .separator, footer .separator {
-  width: 100%;
-  height: 1px;
-  background: rgb(27, 27, 27);
 }
 header .content, footer .content {
   display: flex;
@@ -200,8 +194,8 @@ section.intro_section .image {
 }
 section.intro_section .image img {
   width: 100%;
+  border-radius: 1rem;
   max-width: 22rem;
-  filter: grayscale(1);
 }
 section.intro_section .scroll_icon {
   position: absolute;
@@ -218,24 +212,37 @@ section.intro_section .scroll_icon .icon {
 
 section.skills_section .skills_links {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(8rem, 1fr));
-  align-items: center;
+  grid-template-columns: repeat(auto-fill, minmax(12rem, 1fr));
   gap: 1rem;
-  row-gap: 1.5rem;
 }
 section.skills_section .skills_links div.skill {
-  display: inherit;
-  place-items: center;
-  gap: inherit;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: black;
+  gap: 1rem;
+  border-radius: 1rem;
+  color: white;
+  padding: 2rem;
 }
-section.skills_section .skills_links div.skill img {
+section.skills_section .skills_links div.skill .images {
+  display: flex;
+  gap: 1rem;
+}
+section.skills_section .skills_links div.skill .images img {
   width: 5rem;
   aspect-ratio: 1/1;
-  filter: grayscale(1);
+}
+section.skills_section .skills_links div.skill.android, section.skills_section .skills_links div.skill.web {
+  grid-column: span 2;
+}
+section.skills_section .skills_links div.skill.dsa, section.skills_section .skills_links div.skill.python {
+  grid-column: span 1;
 }
 
 section.projects_section .content {
-  grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(13rem, 1fr));
   gap: 1rem;
 }
 section.projects_section .content .project_card {
@@ -250,25 +257,23 @@ section.projects_section .content .project_card h3 {
 section.projects_section .content .project_card .content {
   position: relative;
   transition: all 200ms ease-in-out;
-  background: white;
+  background: black;
   cursor: pointer;
-  max-width: 100%;
+  border-radius: 1rem;
+  padding: 1rem 0rem;
   aspect-ratio: 1/1;
+  max-width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
-  overflow: hidden;
-  padding: 1rem;
 }
 section.projects_section .content .project_card .content img {
   height: 100%;
   -o-object-fit: contain;
      object-fit: contain;
   border-radius: 1rem;
-  border: 1px solid grey;
 }
 section.projects_section .content .project_card .content img.icon {
-  padding: 1rem;
   width: 5rem;
   height: 5rem;
 }
@@ -281,6 +286,7 @@ section.projects_section .content .project_card .content .overlay {
   background: rgba(44, 44, 44, 0.5);
   -webkit-backdrop-filter: blur(5px);
           backdrop-filter: blur(5px);
+  border-radius: 1rem;
   display: grid;
   filter: opacity(0);
   place-items: center;
@@ -288,6 +294,7 @@ section.projects_section .content .project_card .content .overlay {
 }
 section.projects_section .content .project_card .content .overlay img {
   filter: invert(1);
+  border: none;
 }
 section.projects_section .content .project_card .content:hover {
   box-shadow: 1px 1px 100px 2px rgba(0, 0, 0, 0.05);
